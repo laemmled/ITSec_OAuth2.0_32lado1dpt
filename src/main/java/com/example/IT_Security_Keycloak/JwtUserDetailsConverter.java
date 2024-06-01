@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Component
-public class AuthConverter implements Converter<Jwt, AbstractAuthenticationToken> {
+public class JwtUserDetailsConverter implements Converter<Jwt, AbstractAuthenticationToken> {
 
     private final JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter =
         new JwtGrantedAuthoritiesConverter();
