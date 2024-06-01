@@ -1,0 +1,16 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/KeyCloakApp
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+
+server:
+  port: 8090
+
+jwt:
+  auth:
+    converter:
+      resource-id: KeyCloakAppClient
+      principle-attribute: preferred_username
